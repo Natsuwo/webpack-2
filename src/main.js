@@ -1,9 +1,17 @@
 import Vue from 'vue'
-import Contact from './controllers/contacts/Contact'
 import App from './App.vue'
 
-Vue.component('contact-component', Contact);
 
+export const eventBus = new Vue({
+  data: {
+    
+  },
+  methods: {
+    changeAge(age) {
+      this.$emit('ageWasEdit', age);
+    }
+  }
+});
 new Vue({
   el: '#app',
   render: h => h(App)
